@@ -14,4 +14,7 @@ Next, a `pacman -S community/rust` needs to be issued, followed by a `pacman -Sy
 
 ###Notes
 You may need to start the instance of Arch-Linux with VirtualBox if you get an error while trying to `vagrant up`. You also may have to uncheck USB 2.0 capabilities in the VirtualBox settings. 
-Also, you may have to login to the Arch-Linux session with login: `root` and password: `vagrant` 
+Also, you may have to login to the Arch-Linux session with login: `root` and password: `vagrant`
+
+###Basebox Information
+Located [here](https://github.com/terrywang/vagrantboxes/blob/master/archlinux-x86_64.md)
