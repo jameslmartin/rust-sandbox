@@ -11,3 +11,7 @@ Built on top of an Arch-Linux-64 bit basebox, this is a Vagrantfile for Rust dev
 ###What needs to be done
 Need to add automation to append thestinger's nightly Rust builds to pacman.conf. Currently, this is being done with an unstable shell script (test.sh in the /src folder)
 Next, a `pacman -S community/rust` needs to be issued, followed by a `pacman -Syu` to update all packages.
+
+###Notes
+You may need to start the instance of Arch-Linux with VirtualBox if you get an error while trying to `vagrant up`. You also may have to uncheck USB 2.0 capabilities in the VirtualBox settings. 
+Also, you may have to login to the Arch-Linux session with login: `root` and password: `vagrant` 

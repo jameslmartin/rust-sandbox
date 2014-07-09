@@ -1,14 +1,6 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-$script = <<SCRIPT
-curl -O https://www.archlinux.org/packages/community/x86_64/rust/
-tar -xzf rust-nightly.tar.gz
-cd rust-nightly
-./configure
-make && make install
-SCRIPT
-
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -43,12 +35,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.vm.provision :shell, :inline => $script
 
   # Synced folder set up
-  config.vm.synced_folder "src/", "/rust/src",
-    #owner: "root", group: "root"
+  config.vm.synced_folder "src/", "/rust/src"
+  # owner: "root", group: "root"
 
   # Use up to 8 GB of RAM and use DNS resolver from host.
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", "8192"]
-  #  vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+  # vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
   end
 end
