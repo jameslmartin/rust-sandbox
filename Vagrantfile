@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 $script = <<SCRIPT
-curl -O http://static.rust-lang.org/dist/rust-nightly.tar.gz
+curl -O https://www.archlinux.org/packages/community/x86_64/rust/
 tar -xzf rust-nightly.tar.gz
 cd rust-nightly
 ./configure
@@ -40,9 +40,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #config.vm.network :private_network, ip: "192.168.33.10"
 
   # Basic provisioning using inline bash script
-  config.vm.provision :shell, :inline => $script
+  # config.vm.provision :shell, :inline => $script
 
-  # Use up to 4 GB of RAM and use DNS resolver from host.
+  # Synced folder set up
+  config.vm.synced_folder "src/", "/rust/src",
+    #owner: "root", group: "root"
+
+  # Use up to 8 GB of RAM and use DNS resolver from host.
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", "8192"]
   #  vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
