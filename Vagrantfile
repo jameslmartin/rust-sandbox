@@ -47,7 +47,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Use up to 4 GB of RAM and use DNS resolver from host.
   config.vm.provider :virtualbox do |vb|
     vb.name = "arch-linux-for-rust"
-    vb.customize ["modifyvm", :id, "--memory", "8192"]
+    vb.customize ["modifyvm", :id, "--memory", "4096"]
     vb.customize ["modifyvm", :id, "--usbehci", "off"] #disable USB2.0
   # vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
   end
