@@ -5,7 +5,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 $script = <<SCRIPT
 cd /tmp
-wget https://gist.githubusercontent.com/jlmartin9/d8a43e45ef9342435264/raw/55cc4ad328ebbbe7a76e0fb04cd4338c5c3c7a79/provision.sh
+wget https://gist.githubusercontent.com/jameslmartin/d8a43e45ef9342435264/raw/55cc4ad328ebbbe7a76e0fb04cd4338c5c3c7a79/provision.sh
 sh ./provision.sh
 SCRIPT
 
